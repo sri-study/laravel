@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::resource('/articles', 'ArticlesController');
 
 Route::get('/', function () {
     $greeting = 'hello';
