@@ -1,0 +1,44 @@
+@extends('master')
+
+
+@section('style')
+<style>
+    .cont{background: #f8dada;}
+</style>
+@stop
+
+@section('content')
+	<p class="cont">
+		{{$greeting}} {{$name or ''}}. Welcom Back~
+	</p>
+
+	<ul>
+	@foreach($items as $item)
+	    <li>{{$item}}</li>
+	@endforeach
+	</ul>
+
+	@for($i=0; $i<10; $i++)
+	    {{$i}}<br>
+	@endfor
+
+	@if($itemCount = count($items))
+	  <p>There are {{ $itemCount }} items !</p>
+	@else
+	  <p>There is no item !</p>
+	@endif
+
+
+	@forelse($items as $item)
+	  <p>The item is {{ $item }}</p>
+	@empty
+	  <p>There is no item !</p>
+	@endforelse
+@stop
+
+@section('script')
+    <script>
+	alert('fffhello blade');
+    </script>
+@stop
+
